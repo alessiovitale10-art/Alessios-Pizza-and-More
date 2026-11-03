@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alessiovitale10-art.github.io/Alessios-Pizza-and-More/sitemap.xml

@@ -58,6 +58,11 @@ for lang, i in LANGS.items():
         return '<nav class="%s" aria-label="%s">%s</nav>' % (cls, T['Sprache'][i], out)
     s = re.sub(r'<nav class="(sprachen[^"]*)" aria-label="[^"]*">.*?</nav>', nav, s, flags=re.S)
     s = s.replace('l’ <a', 'l’<a')
+    BASE = 'https://alessiovitale10-art.github.io/Alessios-Pizza-and-More/'
+    s = s.replace('<link rel="canonical" href="%s">' % BASE, '<link rel="canonical" href="%s%s/">' % (BASE, lang))
+    s = s.replace('<meta property="og:url" content="%s">' % BASE, '<meta property="og:url" content="%s%s/">' % (BASE, lang))
+    s = s.replace('content="de_DE"', 'content="%s"' % {'en': 'en_GB', 'it': 'it_IT'}[lang])
+    s = s.replace('assets/img/vorschau.jpg"', 'assets/img/vorschau-%s.jpg"' % lang)
     os.makedirs(os.path.join(ROOT, lang), exist_ok=True)
     open(os.path.join(ROOT, lang, 'index.html'), 'w', encoding='utf-8').write(s)
     missing = sorted(set(T) - used)

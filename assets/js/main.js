@@ -73,6 +73,7 @@
 (function () {
   var vids = document.querySelectorAll('video[autoplay]');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (navigator.connection && navigator.connection.saveData) reduce = true; // Datensparmodus: nur Standbild
   vids.forEach(function (v) {
     v.muted = true;
     if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }

@@ -65,12 +65,13 @@ p { margin: 0; }
 /* ---------- Kopfzeile ---------- */
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(74, 56, 44, .92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+.site-header .wrap.header-inner { max-width: none; padding-left: max(clamp(16px, 2.5vw, 40px), env(safe-area-inset-left, 0px)); padding-right: max(clamp(16px, 2.5vw, 40px), env(safe-area-inset-right, 0px)); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .75rem; }
 .brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; min-width: 0; }
-.brand img { width: 56px; height: 56px; flex: none; }
+.brand img { width: 56px; height: 56px; aspect-ratio: 1; object-fit: contain; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
-.brand-name { font-family: var(--f-display); font-weight: 400; font-size: 1.1rem; }
-.brand-sub { font-size: .92rem; color: var(--muted); letter-spacing: .01em; }
+.brand-name { font-family: var(--f-display); font-weight: 400; font-size: 1.1rem; white-space: nowrap; }
+.brand-sub { white-space: nowrap; font-size: .92rem; color: var(--muted); letter-spacing: .01em; }
 .header-actions { display: flex; align-items: center; gap: .75rem; flex: none; }
 .burger { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; display: grid; place-items: center; padding: 0; transition: border-color .2s; }
 .burger:hover { border-color: var(--ink); }
@@ -158,12 +159,16 @@ section { scroll-margin-top: 90px; }
 /* Karte */
 .karte-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .karte-grid .foto { aspect-ratio: 4 / 5; max-height: 640px; }
-.karte { display: flex; flex-direction: column; gap: 1.5rem; }
+.karte { display: flex; flex-direction: column; gap: 1.2rem; }
 .karte dl { margin: 0; display: flex; flex-direction: column; }
 .karte dl > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .2rem 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
 .karte dt { font: 300 1.3rem/1.25 var(--f-display); }
 .karte dd { margin: 0; grid-column: 1; color: var(--muted); font-size: .95rem; }
 .karte .tag { grid-row: 1; grid-column: 2; align-self: center; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.karte-zwischen { margin-top: .5rem; font-size: 1.3rem; }
+.karte-zwischen span { font-family: var(--f-text); font-size: 1rem; color: var(--muted); margin-left: .4rem; }
+.wunsch { font-family: var(--f-display); font-weight: 300; font-size: 1.15rem; }
+.wunsch small { font-family: var(--f-text); font-size: .85rem; color: var(--muted); }
 .karte .klein { font-size: .82rem; color: var(--muted); }
 
 /* Napoli */
@@ -174,6 +179,7 @@ section { scroll-margin-top: 90px; }
 .napoli-ruf { font: 300 italic clamp(1.4rem, 1.1rem + 1vw, 1.9rem)/1.2 var(--f-display); color: var(--azzurro); }
 .napoli-inner { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
 .napoli-text { display: flex; flex-direction: column; gap: 1.2rem; }
+.napoli-text p.muted { max-width: 36rem; }
 .napoli-text .label { color: var(--azzurro); display: flex; align-items: center; gap: .6rem; }
 .napoli-text .label::before { content: ""; width: 28px; height: 3px; border-radius: 2px; background: var(--azzurro); }
 .napoli-text h2 em { color: var(--azzurro); }
@@ -268,8 +274,10 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
 }
 @media (max-width: 600px) {
   .brand img { width: 46px; height: 46px; }
-  .brand-name { font-size: 1.15rem; }
-  .brand-sub { font-size: .7rem; }
+  .brand-name { font-size: clamp(.9rem, .6rem + 1.4vw, 1.05rem); }
+  .brand-sub { font-size: clamp(.72rem, .55rem + .8vw, .85rem); }
+  .brand { gap: .6rem; }
+  .hero-zugehoerig { display: none; }
   .header-actions .btn { display: none; }
   .napo-grid, .ablauf-grid, .angebot-grid { grid-template-columns: 1fr; }
   .napo-bilder { grid-template-columns: 1fr 1fr; }

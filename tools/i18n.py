@@ -4,7 +4,7 @@ T = {
 "Alessio's Pizza and More – Pizza Napoletana Event-Catering": ("Alessio's Pizza and More – Pizza Napoletana event catering", "Alessio's Pizza and More – Catering con pizza napoletana"),
 "Zum Inhalt springen": ("Skip to content", "Vai al contenuto"),
 "Alessio's Pizza and More – zur Startseite": ("Alessio's Pizza and More – home", "Alessio's Pizza and More – home"),
-"ein Unternehmen von Naro’s Singing Pizza": ("a company of Naro’s Singing Pizza", "un’azienda di Naro’s Singing Pizza"),
+"ein Angebot von Naro’s Singing Pizza": ("part of Naro’s Singing Pizza", "parte di Naro’s Singing Pizza"),
 "Sprache": ("Language", "Lingua"),
 "Anfrage stellen": ("Enquire", "Richiedi"),
 "Menü öffnen": ("Open menu", "Apri menu"),
@@ -164,7 +164,7 @@ T = {
 "gelesen. Meine Angaben werden zur Bearbeitung der Anfrage verwendet. *": (". My details will be used to process the enquiry. *", ". I miei dati saranno usati per gestire la richiesta. *"),
 "Per WhatsApp senden": ("Send via WhatsApp", "Invia con WhatsApp"),
 "Per E-Mail senden": ("Send via e-mail", "Invia per e-mail"),
-"Alessio's Pizza and More ist ein Unternehmen von Naro’s Singing Pizza. Anbieter: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim.": ("Alessio's Pizza and More is a company of Naro’s Singing Pizza. Provider: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim, Germany.", "Alessio's Pizza and More è un’azienda di Naro’s Singing Pizza. Fornitore: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim, Germania."),
+"Alessio's Pizza and More ist ein Angebot von Naro’s Singing Pizza. Anbieter: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim.": ("Alessio's Pizza and More is part of Naro’s Singing Pizza. Provider: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim, Germany.", "Alessio's Pizza and More fa parte di Naro’s Singing Pizza. Fornitore: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim, Germania."),
 "Aperol & Spritz": ("Aperol & spritz", "Aperol & Spritz"),
 "03 · Aperitivo & mehr": ("03 · Aperitivo & more", "03 · Aperitivo e altro"),
 "Aperol, Sektempfang & mehr": ("Aperol, sparkling wine & more", "Aperol, bollicine e altro"),
@@ -172,6 +172,6 @@ T = {
 "Antipasti & Dolci": ("Antipasti & dolci", "Antipasti e dolci"),
 }
 META = {
-"en": "Alessio's Pizza and More – authentic Neapolitan pizza baked live at weddings, corporate events and private parties in and around Mannheim. A company of Naro’s Singing Pizza.",
-"it": "Alessio's Pizza and More – vera pizza napoletana sfornata dal vivo per matrimoni, feste aziendali e private a Mannheim e dintorni. Un’azienda di Naro’s Singing Pizza.",
+"en": "Alessio's Pizza and More – authentic Neapolitan pizza baked live at weddings, corporate events and private parties in and around Mannheim. Part of Naro’s Singing Pizza.",
+"it": "Alessio's Pizza and More – vera pizza napoletana sfornata dal vivo per matrimoni, feste aziendali e private a Mannheim e dintorni. Fa parte di Naro’s Singing Pizza.",
 }

@@ -164,12 +164,22 @@ section { scroll-margin-top: 90px; }
 
 /* Napoli */
 .napoli { border-top: 1px solid var(--line); }
+.napoli + .section { border-top: 1px solid var(--line); }
 .napoli-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.napoli .foto { aspect-ratio: 4 / 5; max-height: 640px; }
+.napoli .foto { aspect-ratio: 3 / 2; }
+.napoli-ruf { font: 300 italic clamp(1.4rem, 1.1rem + 1vw, 1.9rem)/1.2 var(--f-display); color: var(--azzurro); }
+.napoli-inner { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
 .napoli-text { display: flex; flex-direction: column; gap: 1.2rem; }
 .napoli-text .label { color: var(--azzurro); display: flex; align-items: center; gap: .6rem; }
 .napoli-text .label::before { content: ""; width: 28px; height: 3px; border-radius: 2px; background: var(--azzurro); }
 .napoli-text h2 em { color: var(--azzurro); }
+
+/* Über mich */
+.about-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.about-foto { aspect-ratio: 4 / 5; max-height: 720px; }
+.about-text { display: flex; flex-direction: column; gap: 1.2rem; }
+.about-text p:not(.lead) { color: var(--muted); max-width: 36rem; }
+.signatur { font: 300 italic 2rem/1 var(--f-display); color: var(--accent) !important; margin-top: .4rem; }
 
 /* Ablauf */
 .ablauf-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; counter-reset: schritt; list-style: none; margin: 0; padding: 0; }
@@ -240,7 +250,7 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .hero-grid, .karte-grid, .napoli-inner, .kontakt-grid, .section-head { grid-template-columns: 1fr; }
+  .hero-grid, .karte-grid, .napoli-inner, .kontakt-grid, .section-head, .about-grid { grid-template-columns: 1fr; }
   .hero-foto { aspect-ratio: 4 / 3; }
   .napo-grid, .ablauf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .angebot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

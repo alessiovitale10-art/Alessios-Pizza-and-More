@@ -84,3 +84,23 @@
     }
   });
 })();
+
+// Sanftes Einblenden beim Scrollen
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sel = '.section-head, .napo-card, .napo-bilder figure, .napoli-inner > *, .leistung, .karte-grid > *, .zitat, .about-grid > *, .gemeinsam, .ablauf-grid li, .rundum, .abend-schritt, .galerie-grid > *, .faq-item, .kontakt-grid > *';
+  var els = document.querySelectorAll(sel);
+  if (!els.length) return;
+  document.documentElement.classList.add('js-reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('sichtbar'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(function (el) {
+    var sibs = el.parentElement ? Array.prototype.filter.call(el.parentElement.children, function (c) { return c.matches(sel); }) : [];
+    var i = sibs.indexOf(el);
+    if (i > 0) el.style.setProperty('--d', Math.min(i % 4, 3) * 0.12 + 's');
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();

@@ -182,3 +182,5 @@ META = {
 
 from i18n_faq import FAQ
 T.update(FAQ)
+from i18n_extra import EXTRA
+T.update(EXTRA)

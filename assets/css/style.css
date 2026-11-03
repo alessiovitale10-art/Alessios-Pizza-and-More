@@ -295,6 +295,43 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
 .faq-item summary:hover { color: var(--accent); }
 .faq-item p { color: var(--muted); padding: 0 2rem 1.3rem 0; margin: 0; }
 
+/* Laufband */
+.laufband { overflow: hidden; border-block: 1px solid var(--line); background: var(--bg); padding-block: 1.1rem; }
+.laufband-spur { display: flex; width: max-content; animation: laufband 42s linear infinite; }
+.laufband ul { display: flex; margin: 0; padding: 0; list-style: none; }
+.laufband li { font-family: var(--f-display); font-weight: 300; font-size: clamp(1.05rem, .9rem + .7vw, 1.5rem); white-space: nowrap; color: var(--ink); padding-inline: 1.4rem; display: flex; align-items: center; gap: 2.8rem; }
+.laufband li::after { content: "✦"; color: var(--accent); font-size: .7em; margin-right: -1.4rem; }
+.laufband li:nth-child(even) { font-style: italic; color: var(--accent); }
+.laufband:hover .laufband-spur { animation-play-state: paused; }
+@keyframes laufband { to { transform: translateX(-50%); } }
+
+/* Zitate */
+.zitate { background: #3b2c22; padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.zitate-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 4rem); }
+.zitat { margin: 0; display: flex; flex-direction: column; gap: 1.2rem; padding-top: 1.6rem; border-top: 1px solid var(--accent); }
+.zitat blockquote { margin: 0; font-family: var(--f-display); font-weight: 300; font-style: italic; font-size: clamp(1.25rem, 1rem + .9vw, 1.7rem); line-height: 1.4; color: var(--ink); }
+.zitat figcaption { font-size: 1rem; color: var(--accent); letter-spacing: .04em; }
+.zitat figcaption span { display: block; color: var(--muted); font-size: .9rem; letter-spacing: 0; }
+
+/* Ein Abend mit uns */
+.abend-zeitstrahl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; position: relative; }
+.abend-schritt { display: flex; flex-direction: column; gap: .5rem; position: relative; padding-top: 2.2rem; }
+.abend-schritt .foto { aspect-ratio: 4 / 5; margin-bottom: 1rem; }
+.abend-schritt::before { content: ""; position: absolute; left: 0; right: -1.5rem; top: 6px; height: 1px; background: linear-gradient(90deg, var(--accent), var(--line)); }
+.abend-schritt:last-child::before { right: 0; background: linear-gradient(90deg, var(--accent), transparent); }
+.abend-schritt::after { content: ""; position: absolute; left: 0; top: 0; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px rgba(224, 176, 122, .18); }
+.abend-zeit { font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.abend-schritt h3 { font-size: clamp(1.25rem, 1.05rem + .6vw, 1.6rem); }
+.abend-schritt p { color: var(--muted); margin: 0; }
+
+/* Sanftes Einblenden */
+.js-reveal .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--d, 0s); }
+.js-reveal .reveal.sichtbar { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .laufband-spur { animation: none; }
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .hero-grid, .karte-grid, .napoli-inner, .kontakt-grid, .section-head, .about-grid { grid-template-columns: 1fr; }
@@ -302,6 +339,9 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
   .napo-grid, .ablauf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .angebot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .faq-liste { columns: 1; }
+  .zitate-grid { grid-template-columns: 1fr; }
+  .abend-zeitstrahl { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; }
+  .abend-schritt:nth-child(2n)::before { right: 0; }
   .leistung, .leistung.gross { grid-column: span 1; }
   .leistung.haupt { grid-column: 1 / -1; grid-template-columns: 1fr; }
   .fakten { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -33,30 +33,37 @@
   var WHATSAPP_NUMMER = '491627110088'; // WhatsApp-Nummer für Anfragen
 
   // Formular: kein Server nötig – öffnet das E-Mail-Programm mit vorausgefüllter Anfrage
+  var LANG = (document.documentElement.lang || 'de').slice(0, 2);
+  var ALL = {
+    de: { err1: TXT.err1, err2: TXT.err2, name: 'Name', mail: 'E-Mail', tel: 'Telefon', datum: 'Datum', ort: 'Ort', gaeste: 'Gäste', angebot: 'Angebot', subj: TXT.subj, fuer: TXT.fuer, hallo: TXT.hallo, euer: TXT.euer, wa: TXT.wa, em: TXT.em },
+    en: { err1: 'Please enter your name and a valid e-mail address.', err2: 'Please confirm the privacy notice.', name: 'Name', mail: 'E-mail', tel: 'Phone', datum: 'Date', ort: 'Location', gaeste: 'Guests', angebot: 'Service', subj: 'Catering enquiry', fuer: ' for ', hallo: 'Ciao Alessio, I am interested in ', euer: 'your services', wa: 'WhatsApp opens with your finished message. Just tap “Send” there.', em: 'Your e-mail app opens with the finished enquiry. Just click “Send” there.' },
+    it: { err1: 'Inserisci il nome e un indirizzo e-mail valido.', err2: 'Conferma l’informativa sulla privacy.', name: 'Nome', mail: 'E-mail', tel: 'Telefono', datum: 'Data', ort: 'Luogo', gaeste: 'Ospiti', angebot: 'Offerta', subj: 'Richiesta catering', fuer: ' per il ', hallo: 'Ciao Alessio, mi interessa ', euer: 'la vostra offerta', wa: 'Si apre WhatsApp con il messaggio pronto. Tocca ancora “Invia”.', em: 'Si apre il tuo programma e-mail con la richiesta pronta. Clicca ancora “Invia”.' }
+  };
+  var TXT = ALL[LANG] || ALL.de;
   var form = document.getElementById('anfrage-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = document.getElementById('form-status');
       var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-      if (!v('f-name') || !form.querySelector('#f-mail').checkValidity() || !v('f-mail')) { status.style.color = '#c3361f'; status.textContent = 'Bitte Name und eine gültige E-Mail-Adresse angeben.'; return; }
-      if (!document.getElementById('f-ds').checked) { status.style.color = '#c3361f'; status.textContent = 'Bitte bestätigen Sie den Hinweis zum Datenschutz.'; return; }
+      if (!v('f-name') || !form.querySelector('#f-mail').checkValidity() || !v('f-mail')) { status.style.color = '#c3361f'; status.textContent = TXT.err1; return; }
+      if (!document.getElementById('f-ds').checked) { status.style.color = '#c3361f'; status.textContent = TXT.err2; return; }
       var leistungen = Array.prototype.map.call(form.querySelectorAll('input[name="leistung"]:checked'), function (c) { return c.value; }).join(', ');
       var body = [
-        'Name: ' + v('f-name'), 'E-Mail: ' + v('f-mail'), 'Telefon: ' + v('f-tel'),
-        'Datum: ' + v('f-datum'), 'Ort: ' + v('f-ort'), 'Gäste: ' + v('f-gaeste'),
-        'Angebot: ' + leistungen, '', v('f-text')
+        TXT.name + ': ' + v('f-name'), TXT.mail + ': ' + v('f-mail'), TXT.tel + ': ' + v('f-tel'),
+        TXT.datum + ': ' + v('f-datum'), TXT.ort + ': ' + v('f-ort'), TXT.gaeste + ': ' + v('f-gaeste'),
+        TXT.angebot + ': ' + leistungen, '', v('f-text')
       ].join('\n');
-      var subject = 'Catering-Anfrage' + (v('f-datum') ? ' für den ' + v('f-datum') : '');
+      var subject = TXT.subj + (v('f-datum') ? TXT.fuer + v('f-datum') : '');
       var kanal = (e.submitter && e.submitter.getAttribute('data-kanal')) || 'email';
       status.style.color = '';
       if (kanal === 'whatsapp') {
-        var text = 'Ciao Alessio, ich interessiere mich für ' + (leistungen || 'euer Angebot') + '.\n\n' + body;
+        var text = TXT.hallo + (leistungen || TXT.euer) + '.\n\n' + body;
         window.open('https://wa.me/' + WHATSAPP_NUMMER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-        status.textContent = 'WhatsApp öffnet sich mit Ihrer fertigen Nachricht. Bitte dort noch auf „Senden“ tippen.';
+        status.textContent = TXT.wa;
       } else {
         window.location.href = 'mailto:alessiospizza@singing-pizza.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        status.textContent = 'Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage. Bitte dort noch auf „Senden“ tippen.';
+        status.textContent = TXT.em;
       }
     });
   }

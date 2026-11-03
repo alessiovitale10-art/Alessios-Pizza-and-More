@@ -2,15 +2,15 @@
    Layout-Idee: helles, ruhiges Editorial-Layout. Viel Weißraum, große Fotos,
    eine elegante Serifenschrift für Überschriften, ein einziger Akzent (Pomodoro). */
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f7f5f1;      /* warmes Off-White für Wechsel-Sektionen */
+  --bg: #fbf7f0;           /* sehr helles, rustikales Beige */
+  --bg-soft: #f4ecdf;      /* etwas kräftigeres Beige für Wechsel-Sektionen */
   --ink: #1c1917;          /* fast Schwarz, leicht warm */
   --muted: #6f6861;
-  --line: #e8e3dc;
+  --line: #e6dccb;
   --accent: #b8432a;       /* Pomodoro / Ofenglut, sparsam eingesetzt */
   --accent-dark: #943420;
   --azzurro: #2a86c5;      /* Napoli-Blau, nur ein Detail */
-  --foto: #ece7df;         /* Foto-Platzhalter */
+  --foto: #e9dfcf;
 
   --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --f-text: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -63,7 +63,7 @@ p { margin: 0; }
 
 /* ---------- Kopfzeile ---------- */
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
-.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255, 255, 255, .92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(251, 247, 240, .92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .75rem; }
 .brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; min-width: 0; }
 .brand img { width: 56px; height: 56px; flex: none; }
@@ -103,7 +103,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* ---------- Foto-Platzhalter ---------- */
 .foto { position: relative; background: var(--foto); border-radius: var(--radius); overflow: hidden; max-width: 100%; }
 .foto img { width: 100%; height: 100%; object-fit: cover; }
-.foto[data-label]::after { content: attr(data-label); position: absolute; left: 1rem; bottom: 1rem; font-size: .75rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); background: rgba(255, 255, 255, .85); padding: .35rem .7rem; border-radius: 999px; }
+.foto[data-label]::after { content: attr(data-label); position: absolute; left: 1rem; bottom: 1rem; font-size: .75rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); background: rgba(251, 247, 240, .9); padding: .35rem .7rem; border-radius: 999px; }
 .foto .platzhalter-icon { position: absolute; inset: 0; margin: auto; width: 56px; height: 56px; color: #c9c0b4; }
 
 /* ---------- Hero ---------- */

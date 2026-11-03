@@ -166,6 +166,10 @@ T = {
 "Per E-Mail senden": ("Send via e-mail", "Invia per e-mail"),
 "Alessio's Pizza and More ist ein Unternehmen von Naro’s Singing Pizza. Anbieter: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim.": ("Alessio's Pizza and More is a company of Naro’s Singing Pizza. Provider: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim, Germany.", "Alessio's Pizza and More è un’azienda di Naro’s Singing Pizza. Fornitore: Gennaro und Maria Vitale GbR, Hirschhorner Straße 13a, 68259 Mannheim, Germania."),
 "Aperol & Spritz": ("Aperol & spritz", "Aperol & Spritz"),
+"03 · Aperitivo & mehr": ("03 · Aperitivo & more", "03 · Aperitivo e altro"),
+"Aperol, Sektempfang & mehr": ("Aperol, sparkling wine & more", "Aperol, bollicine e altro"),
+"Als Auftakt nach der Trauung, zur Begrüßung oder für den Abend: Aperol Spritz, Prosecco und Sekt, auf Wunsch auch alkoholfrei. Dazu Antipasti, Dolci oder Ihre eigenen Wünsche.": ("To start after the ceremony, to welcome guests or for the evening: Aperol spritz, prosecco and sparkling wine, alcohol-free on request. Plus antipasti, dolci or your own wishes.", "Per iniziare dopo la cerimonia, per l’accoglienza o per la serata: Aperol Spritz, prosecco e spumante, su richiesta anche analcolici. In più antipasti, dolci o i tuoi desideri."),
+"Antipasti & Dolci": ("Antipasti & dolci", "Antipasti e dolci"),
 }
 META = {
 "en": "Alessio's Pizza and More – authentic Neapolitan pizza baked live at weddings, corporate events and private parties in and around Mannheim. A company of Naro’s Singing Pizza.",

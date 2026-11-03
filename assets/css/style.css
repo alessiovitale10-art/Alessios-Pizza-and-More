@@ -58,6 +58,8 @@ p { margin: 0; }
 .btn-primary:hover { background: var(--accent); color: var(--on-ink); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--ink); }
+.btn-whatsapp { background: #25d366; color: #0f2b1a; }
+.btn-whatsapp:hover { background: #3be07a; }
 .btn-small { padding: .75rem 1.2rem; font-size: .88rem; }
 .pfeil { transition: transform .2s ease; }
 .btn:hover .pfeil { transform: translateX(3px); }
@@ -196,6 +198,14 @@ section { scroll-margin-top: 90px; }
 .ablauf-grid li { counter-increment: schritt; display: flex; flex-direction: column; gap: .6rem; padding-top: 1.25rem; border-top: 1px solid var(--ink); }
 .ablauf-grid li::before { content: "0" counter(schritt); font-size: .8rem; font-weight: 700; color: var(--accent); letter-spacing: .1em; }
 .ablauf-grid p { color: var(--muted); font-size: .97rem; }
+
+.rundum { margin-top: clamp(2.5rem, 5vw, 3.5rem); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem 3rem; align-items: center; padding: clamp(1.4rem, 3vw, 2.2rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); }
+.rundum-text { display: flex; flex-direction: column; gap: .5rem; }
+.rundum-text h3 { font-size: var(--step-1); }
+.rundum-liste { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+.rundum-liste li { display: flex; align-items: baseline; gap: .5rem; padding: .9rem 1.2rem; border-radius: 10px; background: var(--bg-soft); }
+.rundum-liste b { font: 300 1.6rem/1 var(--f-display); color: var(--accent); }
+@media (max-width: 760px) { .rundum { grid-template-columns: 1fr; } }
 
 /* Galerie */
 .galerie-grid { display: grid; grid-auto-flow: dense; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(140px, 18vw, 240px); gap: 1rem; }

@@ -30,6 +30,8 @@
 
   document.querySelectorAll('[data-jahr]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  var WHATSAPP_NUMMER = '491627110088'; // WhatsApp-Nummer für Anfragen
+
   // Formular: kein Server nötig – öffnet das E-Mail-Programm mit vorausgefüllter Anfrage
   var form = document.getElementById('anfrage-form');
   if (form) {
@@ -43,12 +45,19 @@
       var body = [
         'Name: ' + v('f-name'), 'E-Mail: ' + v('f-mail'), 'Telefon: ' + v('f-tel'),
         'Datum: ' + v('f-datum'), 'Ort: ' + v('f-ort'), 'Gäste: ' + v('f-gaeste'),
-        'Gewünscht: ' + leistungen, '', v('f-text')
+        'Angebot: ' + leistungen, '', v('f-text')
       ].join('\n');
       var subject = 'Catering-Anfrage' + (v('f-datum') ? ' für den ' + v('f-datum') : '');
-      window.location.href = 'mailto:alessiospizza@singing-pizza.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var kanal = (e.submitter && e.submitter.getAttribute('data-kanal')) || 'email';
       status.style.color = '';
-      status.textContent = 'Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage. Bitte dort noch auf „Senden“ tippen.';
+      if (kanal === 'whatsapp') {
+        var text = 'Ciao Alessio, ich interessiere mich für ' + (leistungen || 'euer Angebot') + '.\n\n' + body;
+        window.open('https://wa.me/' + WHATSAPP_NUMMER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+        status.textContent = 'WhatsApp öffnet sich mit Ihrer fertigen Nachricht. Bitte dort noch auf „Senden“ tippen.';
+      } else {
+        window.location.href = 'mailto:alessiospizza@singing-pizza.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        status.textContent = 'Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage. Bitte dort noch auf „Senden“ tippen.';
+      }
     });
   }
 })();

@@ -35,7 +35,7 @@
   // Formular: kein Server nötig – öffnet das E-Mail-Programm mit vorausgefüllter Anfrage
   var LANG = (document.documentElement.lang || 'de').slice(0, 2);
   var ALL = {
-    de: { err1: TXT.err1, err2: TXT.err2, name: 'Name', mail: 'E-Mail', tel: 'Telefon', datum: 'Datum', ort: 'Ort', gaeste: 'Gäste', angebot: 'Angebot', subj: TXT.subj, fuer: TXT.fuer, hallo: TXT.hallo, euer: TXT.euer, wa: TXT.wa, em: TXT.em },
+    de: { err1: 'Bitte Name und eine gültige E-Mail-Adresse angeben.', err2: 'Bitte bestätigen Sie den Hinweis zum Datenschutz.', name: 'Name', mail: 'E-Mail', tel: 'Telefon', datum: 'Datum', ort: 'Ort', gaeste: 'Gäste', angebot: 'Angebot', subj: 'Catering-Anfrage', fuer: ' für den ', hallo: 'Ciao Alessio, ich interessiere mich für ', euer: 'euer Angebot', wa: 'WhatsApp öffnet sich mit Ihrer fertigen Nachricht. Bitte dort noch auf „Senden“ tippen.', em: 'Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage. Bitte dort noch auf „Senden“ tippen.' },
     en: { err1: 'Please enter your name and a valid e-mail address.', err2: 'Please confirm the privacy notice.', name: 'Name', mail: 'E-mail', tel: 'Phone', datum: 'Date', ort: 'Location', gaeste: 'Guests', angebot: 'Service', subj: 'Catering enquiry', fuer: ' for ', hallo: 'Ciao Alessio, I am interested in ', euer: 'your services', wa: 'WhatsApp opens with your finished message. Just tap “Send” there.', em: 'Your e-mail app opens with the finished enquiry. Just click “Send” there.' },
     it: { err1: 'Inserisci il nome e un indirizzo e-mail valido.', err2: 'Conferma l’informativa sulla privacy.', name: 'Nome', mail: 'E-mail', tel: 'Telefono', datum: 'Data', ort: 'Luogo', gaeste: 'Ospiti', angebot: 'Offerta', subj: 'Richiesta catering', fuer: ' per il ', hallo: 'Ciao Alessio, mi interessa ', euer: 'la vostra offerta', wa: 'Si apre WhatsApp con il messaggio pronto. Tocca ancora “Invia”.', em: 'Si apre il tuo programma e-mail con la richiesta pronta. Clicca ancora “Invia”.' }
   };
@@ -59,7 +59,9 @@
       status.style.color = '';
       if (kanal === 'whatsapp') {
         var text = TXT.hallo + (leistungen || TXT.euer) + '.\n\n' + body;
-        window.open('https://wa.me/' + WHATSAPP_NUMMER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+        var waUrl = 'https://wa.me/' + WHATSAPP_NUMMER + '?text=' + encodeURIComponent(text);
+        var w = window.open(waUrl, '_blank');
+        if (w) { try { w.opener = null; } catch (err) {} } else { window.location.href = waUrl; } // Popup blockiert: direkt öffnen
         status.textContent = TXT.wa;
       } else {
         window.location.href = 'mailto:alessiospizza@singing-pizza.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);

@@ -72,7 +72,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .brand { display: flex; align-items: center; gap: 1.1rem; text-decoration: none; min-width: 0; }
 .brand img { width: 76px; height: 76px; aspect-ratio: 1; object-fit: contain; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
-.brand-name { font-family: var(--f-display); font-weight: 400; font-size: 1.45rem; white-space: nowrap; }
+.brand-name { font-family: var(--f-display); font-weight: 700; font-size: 1.45rem; white-space: nowrap; }
 .brand-sub { white-space: nowrap; font-size: 1.05rem; color: var(--muted); letter-spacing: .01em; }
 .header-actions { display: flex; align-items: center; gap: .75rem; flex: none; }
 .sprachen { display: flex; gap: .15rem; font-family: var(--f-display); font-size: .8rem; letter-spacing: .08em; }
@@ -353,7 +353,7 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
 @media (max-width: 600px) {
   .brand img { width: 50px; height: 50px; }
   .header-actions .sprachen { display: none; }
-  .brand-name { font-size: clamp(.9rem, .6rem + 1.4vw, 1.05rem); }
+  .brand-name { font-size: clamp(.84rem, .45rem + 1.6vw, 1.05rem); }
   .brand-sub { font-size: clamp(.72rem, .55rem + .8vw, .85rem); }
   .brand { gap: .6rem; }
   .hero-zugehoerig { display: none; }
@@ -366,4 +366,9 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
   .galerie-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; }
   form.anfrage { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 400px) {
+  .header-actions { gap: .45rem; }
+  .header-insta, .header-actions .burger { width: 40px; height: 40px; }
 }

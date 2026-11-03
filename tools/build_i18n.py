@@ -5,7 +5,20 @@ sys.path.insert(0, os.path.dirname(__file__))
 from i18n import T, META
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
+import json
+
+def faq_ld(page):
+    # FAQPage-Daten für Google aus den sichtbaren FAQ-Einträgen erzeugen
+    qa = re.findall(r'<summary>(.*?)</summary>\s*<p>(.*?)</p>', page, re.S)
+    data = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+        {'@type': 'Question', 'name': html.unescape(q), 'acceptedAnswer': {'@type': 'Answer', 'text': html.unescape(re.sub('<[^>]+>', '', a))}} for q, a in qa]}
+    block = '<!--faq-ld--><script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script><!--/faq-ld-->'
+    page = re.sub(r'<!--faq-ld-->.*?<!--/faq-ld-->\n?', '', page, flags=re.S)
+    return page.replace('</head>', block + '\n</head>', 1)
+
+de_path = os.path.join(ROOT, 'index.html')
+src = faq_ld(open(de_path, encoding='utf-8').read())
+open(de_path, 'w', encoding='utf-8').write(src)
 LANGS = {'en': 0, 'it': 1}
 ATTRS = ('alt', 'aria-label', 'placeholder', 'title', 'value', 'content')
 
@@ -63,6 +76,7 @@ for lang, i in LANGS.items():
     s = s.replace('<meta property="og:url" content="%s">' % BASE, '<meta property="og:url" content="%s%s/">' % (BASE, lang))
     s = s.replace('content="de_DE"', 'content="%s"' % {'en': 'en_GB', 'it': 'it_IT'}[lang])
     s = s.replace('assets/img/vorschau.jpg"', 'assets/img/vorschau-%s.jpg"' % lang)
+    s = faq_ld(s)
     os.makedirs(os.path.join(ROOT, lang), exist_ok=True)
     open(os.path.join(ROOT, lang, 'index.html'), 'w', encoding='utf-8').write(s)
     missing = sorted(set(T) - used)

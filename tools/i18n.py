@@ -179,3 +179,6 @@ META = {
 "en": "Pizza catering in and around Mannheim – Alessio's Pizza and More: authentic Neapolitan pizza baked live at weddings, corporate events and private parties in and around Mannheim. Part of Naro’s Singing Pizza.",
 "it": "Catering pizza a Mannheim e dintorni – Alessio's Pizza and More: vera pizza napoletana sfornata dal vivo per matrimoni, feste aziendali e private a Mannheim e dintorni. Fa parte di Naro’s Singing Pizza.",
 }
+
+from i18n_faq import FAQ
+T.update(FAQ)

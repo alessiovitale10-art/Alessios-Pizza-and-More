@@ -103,7 +103,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* ---------- Foto-Platzhalter ---------- */
 .foto { position: relative; background: var(--foto); border-radius: var(--radius); overflow: hidden; max-width: 100%; }
-.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto img, .foto video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .foto[data-label]::after { content: attr(data-label); position: absolute; left: 1rem; bottom: 1rem; font-size: .75rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); background: rgba(59, 44, 34, .75); padding: .35rem .7rem; border-radius: 999px; }
 .foto .platzhalter-icon { position: absolute; inset: 0; margin: auto; width: 56px; height: 56px; color: #8a7058; }
 
@@ -153,7 +153,7 @@ section { scroll-margin-top: 90px; }
 
 /* Karte */
 .karte-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-.karte-grid .foto { aspect-ratio: 1; }
+.karte-grid .foto { aspect-ratio: 4 / 5; max-height: 640px; }
 .karte { display: flex; flex-direction: column; gap: 1.5rem; }
 .karte dl { margin: 0; display: flex; flex-direction: column; }
 .karte dl > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .2rem 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
@@ -165,7 +165,7 @@ section { scroll-margin-top: 90px; }
 /* Napoli */
 .napoli { border-top: 1px solid var(--line); }
 .napoli-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.napoli .foto { aspect-ratio: 3 / 2; }
+.napoli .foto { aspect-ratio: 4 / 5; max-height: 640px; }
 .napoli-text { display: flex; flex-direction: column; gap: 1.2rem; }
 .napoli-text .label { color: var(--azzurro); display: flex; align-items: center; gap: .6rem; }
 .napoli-text .label::before { content: ""; width: 28px; height: 3px; border-radius: 2px; background: var(--azzurro); }

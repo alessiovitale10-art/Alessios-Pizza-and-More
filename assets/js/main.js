@@ -52,3 +52,18 @@
     });
   }
 })();
+
+// Videos: bei "Bewegung reduzieren" anhalten, außerhalb des Sichtfelds pausieren
+(function () {
+  var vids = document.querySelectorAll('video[autoplay]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  vids.forEach(function (v) {
+    v.muted = true;
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); } });
+      }, { threshold: 0.1 }).observe(v);
+    }
+  });
+})();

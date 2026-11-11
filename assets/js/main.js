@@ -91,7 +91,7 @@
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sel = '.section-head, .napo-card, .napo-bilder figure, .napoli-inner > *, .leistung, .karte-grid > *, .zitat, .about-grid > *, .gemeinsam, .ablauf-grid li, .rundum, .abend-schritt, .galerie-grid > *, .faq-item, .kontakt-grid > *';
+  var sel = '.sec-head, .zahl, .zutaten-bilder img, .zutaten-text > *, .napoli-in > *, .angebot-gross, .angebot-klein article, .karte-kopf, .karte-spalten > div, .schritte li, .ueber > img, .ueber-text > *, .galerie img, .faq-kopf, .faq-item, .kontakt-text, .formular';
   var els = document.querySelectorAll(sel);
   if (!els.length) return;
   document.documentElement.classList.add('js-reveal');
@@ -105,4 +105,12 @@
     el.classList.add('reveal');
     io.observe(el);
   });
+})();
+
+// Handy-Menü: nach Klick auf einen Link schließen
+(function () {
+  var m = document.querySelector('.mobil-menue');
+  if (!m) return;
+  m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.removeAttribute('open'); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') m.removeAttribute('open'); });
 })();

@@ -1,7 +1,7 @@
 EXTRA = {
-"72 Std. Teigruhe": ("72 hrs dough rest", "72 ore di lievitazione"),
+"48 Std. Teigruhe": ("48 hrs dough rest", "48 ore di lievitazione"),
 "70–90 Sek. im Ofen": ("70–90 sec. in the oven", "70–90 sec. in forno"),
-"Pizza Napoletana: ca. 485 °C, 72 Std. Teigruhe, 70–90 Sek. im Ofen": ("Pizza Napoletana: approx. 485 °C, 72 hrs dough rest, 70–90 sec. in the oven", "Pizza napoletana: ca. 485 °C, 72 ore di lievitazione, 70–90 sec. in forno"),
+"Pizza Napoletana: ca. 485 °C, 48 Std. Teigruhe, 70–90 Sek. im Ofen": ("Pizza Napoletana: approx. 485 °C, 48 hrs dough rest, 70–90 sec. in the oven", "Pizza napoletana: ca. 485 °C, 48 ore di lievitazione, 70–90 sec. in forno"),
 "Zitate über Pizza": ("Quotes about pizza", "Citazioni sulla pizza"),
 "Tomate, Mozzarella, Basilikum: eine Pizza in den Farben Italiens.": ("Tomato, mozzarella, basil: a pizza in the colours of Italy.", "Pomodoro, mozzarella, basilico: una pizza con i colori dell’Italia."),
 "Neapel, 1889": ("Naples, 1889", "Napoli, 1889"),

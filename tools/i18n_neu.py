@@ -9,7 +9,7 @@ NEU = {
 "Zur Karte": ("See the menu", "Vedi il menu"),
 "Wenige Zutaten. Viel Hitze.": ("Few ingredients. Lots of heat.", "Pochi ingredienti. Tanto calore."),
 "So, wie man sie in Neapel isst: luftiger Rand, dünne weiche Mitte und Zutaten, hinter denen eine Geschichte steht.": ("Just like in Naples: an airy crust, a thin, soft centre and ingredients with a story behind them.", "Come la si mangia a Napoli: cornicione soffice, centro sottile e morbido e ingredienti che raccontano una storia."),
-"Gebacken wird in Gozney-Arc-XL-Öfen, bei rund 485 Grad.": ("Baked in Gozney Arc XL ovens at around 485 degrees.", "Cotta nei forni Gozney Arc XL a circa 485 gradi."),
+"Gebacken wird in gasbetriebenen Gozney-Arc-XL-Öfen bei rund 485 Grad. Wo Gas nicht erlaubt ist, kommen wir mit Elektroöfen.": ("Baked in gas-fired Gozney Arc XL ovens at around 485 degrees. Where gas isn’t allowed, we bring electric ovens.", "Cotta nei forni a gas Gozney Arc XL a circa 485 gradi. Dove il gas non è consentito, arriviamo con forni elettrici."),
 "Nur Mehl, Wasser, Salz und Hefe. Zwei Tage Zeit machen den Teig leicht und bekömmlich.": ("Just flour, water, salt and yeast. Two days of rest make the dough light and easy to digest.", "Solo farina, acqua, sale e lievito. Due giorni di riposo rendono l’impasto leggero e digeribile."),
 "Backzeit": ("Baking time", "Cottura"),
 "70 bis 90 Sekunden, dann kommt die Pizza dampfend auf den Teller.": ("70 to 90 seconds, then the pizza arrives steaming on the plate.", "70–90 secondi, poi la pizza arriva fumante nel piatto."),

@@ -46,8 +46,12 @@
       e.preventDefault();
       var status = document.getElementById('form-status');
       var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-      if (!v('f-name') || !form.querySelector('#f-mail').checkValidity() || !v('f-mail')) { status.style.color = '#c3361f'; status.textContent = TXT.err1; return; }
-      if (!document.getElementById('f-ds').checked) { status.style.color = '#c3361f'; status.textContent = TXT.err2; return; }
+      var fehler = function (feld, text) { status.style.color = '#ff9d85'; status.textContent = text; feld.setAttribute('aria-invalid', 'true'); feld.focus(); };
+      Array.prototype.forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) { el.removeAttribute('aria-invalid'); });
+      var fName = document.getElementById('f-name'), fMail = document.getElementById('f-mail'), fDs = document.getElementById('f-ds');
+      if (!v('f-name')) { fehler(fName, TXT.err1); return; }
+      if (!v('f-mail') || !fMail.checkValidity()) { fehler(fMail, TXT.err1); return; }
+      if (!fDs.checked) { fehler(fDs, TXT.err2); return; }
       var leistungen = Array.prototype.map.call(form.querySelectorAll('input[name="leistung"]:checked'), function (c) { return c.value; }).join(', ');
       var body = [
         TXT.name + ': ' + v('f-name'), TXT.mail + ': ' + v('f-mail'), TXT.tel + ': ' + v('f-tel'),

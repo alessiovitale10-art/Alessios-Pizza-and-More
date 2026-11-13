@@ -244,7 +244,8 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
 
 /* Rechtstexte (Impressum, Datenschutz) */
 .recht { max-width: 860px; }
-.recht h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(48px, 6vw, 80px); line-height: 1; letter-spacing: -.03em; margin-bottom: 40px; }
+.recht h1 { font-family: var(--serif); font-weight: 300; font-size: min(8.6vw, clamp(48px, 6vw, 80px)); line-height: 1; letter-spacing: -.03em; margin-bottom: 40px; overflow-wrap: break-word; }
+.zurueck { white-space: nowrap; flex: none; }
 .recht h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; margin: 40px 0 12px; }
 .recht h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; margin: 24px 0 8px; }
 .recht p, .recht li { color: var(--soft); margin: 0 0 12px; }
@@ -260,6 +261,10 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
   .formular { grid-template-columns: 1fr; }
   .galerie { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .galerie img { height: 200px; }
+}
+@media (max-width: 560px) {
+  .zurueck { width: 44px; height: 44px; padding: 0; }
+  .zurueck-txt { display: none; }
 }
 @media (max-width: 420px) {
   .marke img { width: 50px; height: 50px; }

@@ -176,8 +176,8 @@ T = {
 "Alessio's Pizza and More – Neapolitanische Pizza, live gebacken auf Ihrem Event": ("Alessio's Pizza and More – Neapolitan pizza, baked live at your event", "Alessio's Pizza and More – Pizza napoletana, sfornata dal vivo al tuo evento"),
 }
 META = {
-"en": "Pizza catering in and around Mannheim – Alessio's Pizza and More: authentic Neapolitan pizza baked live at weddings, corporate events and private parties in and around Mannheim. Part of Naro’s Singing Pizza.",
-"it": "Catering pizza a Mannheim e dintorni – Alessio's Pizza and More: vera pizza napoletana sfornata dal vivo per matrimoni, feste aziendali e private a Mannheim e dintorni. Fa parte di Naro’s Singing Pizza.",
+"en": "Pizza catering in and around Mannheim: authentic Neapolitan pizza, baked live at weddings, corporate events and birthdays. Plus coffee bar, Aperol bar and sparkling wine reception. Part of Naro’s Singing Pizza.",
+"it": "Catering pizza a Mannheim e dintorni: vera pizza napoletana, sfornata dal vivo per matrimoni, feste aziendali e compleanni. Inoltre caffetteria, Aperol bar e aperitivo con bollicine. Fa parte di Naro’s Singing Pizza.",
 }
 
 from i18n_faq import FAQ

@@ -12,7 +12,7 @@ NEU = {
 "Gebacken wird in gasbetriebenen Gozney-Arc-XL-Öfen bei rund 485 Grad. Wo Gas nicht erlaubt ist, kommen wir mit Elektroöfen.": ("Baked in gas-fired Gozney Arc XL ovens at around 485 degrees. Where gas isn’t allowed, we bring electric ovens.", "Cotta nei forni a gas Gozney Arc XL a circa 485 gradi. Dove il gas non è consentito, arriviamo con forni elettrici."),
 "Nur Mehl, Wasser, Salz und Hefe. Zwei Tage Zeit machen den Teig leicht und bekömmlich.": ("Just flour, water, salt and yeast. Two days of rest make the dough light and easy to digest.", "Solo farina, acqua, sale e lievito. Due giorni di riposo rendono l’impasto leggero e digeribile."),
 "Backzeit": ("Baking time", "Cottura"),
-"70 bis 90 Sekunden, dann kommt die Pizza dampfend auf den Teller.": ("70 to 90 seconds, then the pizza arrives steaming on the plate.", "70–90 secondi, poi la pizza arriva fumante nel piatto."),
+"70 bis 90 Sekunden, dann ist die Pizza dampfend fertig.": ("70 to 90 seconds, and the pizza is ready, still steaming.", "70–90 secondi, e la pizza è pronta, ancora fumante."),
 "Zutaten mit Herkunft": ("Ingredients with origins", "Ingredienti con le radici"),
 "Von Omas Dorf und Mamas Heimat auf Ihre Pizza.": ("From grandma’s village and mum’s hometown onto your pizza.", "Dal paese della nonna e dalla terra della mamma alla tua pizza."),
 "San-Marzano-Tomaten": ("San Marzano tomatoes", "Pomodori San Marzano"),

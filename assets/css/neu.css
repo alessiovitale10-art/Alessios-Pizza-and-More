@@ -226,6 +226,16 @@ em { font-style: italic; }
 .feld input::placeholder, .feld textarea::placeholder { color: #a8927b; }
 .feld input:focus, .feld textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
 .feld textarea { min-height: 130px; resize: vertical; }
+/* iPhone/Safari: Datumsfeld sonst breiter als die anderen Felder und zentriert */
+.feld input[type="date"] { -webkit-appearance: none; appearance: none; display: block; min-width: 0; max-width: 100%; height: calc(17px * 1.6 + 28px); line-height: 1.6; text-align: left; color-scheme: dark; }
+.feld input[type="date"]::-webkit-date-and-time-value { text-align: left; margin: 0; }
+.feld input[type="date"]::-webkit-datetime-edit { padding: 0; }
+/* Automatisch ausgefüllte Felder (Name, Ort …) im dunklen Design statt hellblau */
+.feld input:-webkit-autofill, .feld input:-webkit-autofill:hover, .feld input:-webkit-autofill:focus, .feld textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--cream); caret-color: var(--cream);
+  -webkit-box-shadow: 0 0 0 1000px var(--mar) inset; box-shadow: 0 0 0 1000px var(--mar) inset;
+  transition: background-color 600000s 0s, color 600000s 0s; }
+.feld input:autofill { background: var(--mar); color: var(--cream); }
 fieldset.feld { border: 0; margin: 0; padding: 0; }
 .auswahl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .auswahl label { position: relative; }

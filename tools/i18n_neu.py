@@ -49,7 +49,6 @@ NEU = {
 "Ihrem Fest.": ("your event.", "tua festa."),
 "Alessio's Pizza and More ist ein Angebot von Naro’s Singing Pizza · Gennaro und Maria Vitale GbR, Mannheim": ("Alessio's Pizza and More is part of Naro’s Singing Pizza · Gennaro und Maria Vitale GbR, Mannheim, Germany", "Alessio's Pizza and More fa parte di Naro’s Singing Pizza · Gennaro und Maria Vitale GbR, Mannheim, Germania"),
 "Pizza-Station am Abend": ("Pizza station in the evening", "Postazione pizza di sera"),
-"Pizzaiolo vor den Öfen": ("Pizzaiolo at the ovens", "Pizzaiolo davanti ai forni"),
 "Rechtliches": ("Legal", "Note legali"),
 "Instagram @alessiospizzaandmore": ("Instagram @alessiospizzaandmore", "Instagram @alessiospizzaandmore"),
 "AGB": ("Terms (German)", "Condizioni (in tedesco)"),

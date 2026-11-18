@@ -10,7 +10,7 @@ MEDIA = os.path.join(ROOT, 'assets', 'media')
 BREITEN = (400, 640, 800, 1200, 1600, 2000)
 # Nur Bilder, die auf der Seite verwendet werden
 BILDER = ('pizza-hero', 'teig', 'belegen', 'forza-napoli', 'team-station', 'kaffee-ape', 'sektempfang',
-          'pizzadoc', 'zelt', 'abendstation', 'station-wiese', 'alessio', 'hochzeit')
+          'pizzastueck', 'zelt', 'abendstation', 'pizza-geschnitten', 'alessio', 'ape-station')
 
 def breiten(w):
     """Stufen unterhalb der Originalbreite, plus das Original selbst."""

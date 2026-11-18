@@ -4,7 +4,7 @@ T = {
 "Alessio's Pizza and More – Pizza Napoletana Event-Catering": ("Alessio's Pizza and More – Pizza Napoletana event catering", "Alessio's Pizza and More – Catering con pizza napoletana"),
 "Zum Inhalt springen": ("Skip to content", "Vai al contenuto"),
 "Alessio's Pizza and More – zur Startseite": ("Alessio's Pizza and More – home", "Alessio's Pizza and More – home"),
-"ein Angebot von Naro’s Singing Pizza": ("part of Naro’s Singing Pizza", "parte di Naro’s Singing Pizza"),
+"ein Angebot von Naro’s\u00a0Singing\u00a0Pizza": ("part of Naro’s\u00a0Singing\u00a0Pizza", "parte di Naro’s\u00a0Singing\u00a0Pizza"),
 "Sprache": ("Language", "Lingua"),
 "Anfrage stellen": ("Enquire", "Richiedi"),
 "Menü öffnen": ("Open menu", "Apri menu"),

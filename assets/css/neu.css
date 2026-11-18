@@ -45,7 +45,10 @@ em { font-style: italic; }
 .rund { border-radius: 4px; object-fit: cover; width: 100%; }
 
 /* Kopfzeile */
-.kopf { position: sticky; top: 0; z-index: 50; background: rgba(36, 24, 18, .96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(244, 234, 217, .14); }
+.kopf { position: sticky; top: 0; z-index: 50; }
+/* Hintergrund + Unschärfe auf einem Pseudo-Element: backdrop-filter direkt am Header
+   würde das fest positionierte Handy-Menü in die Kopfzeile einsperren */
+.kopf::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(36, 24, 18, .96); border-bottom: 1px solid #4a3d33; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .kopf-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px var(--gut); }
 .marke { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--cream); min-width: 0; }
 .marke:hover { color: var(--cream); }
@@ -72,7 +75,7 @@ em { font-style: italic; }
 .mobil-menue[open] .burger-linien { background: transparent; }
 .mobil-menue[open] .burger-linien::before { transform: translateY(6px) rotate(45deg); }
 .mobil-menue[open] .burger-linien::after { transform: translateY(-6px) rotate(-45deg); }
-.mobil-panel { position: fixed; left: 0; right: 0; top: 93px; bottom: 0; background: var(--esp); padding: 24px var(--gut) 40px; display: flex; flex-direction: column; gap: 4px; overflow-y: auto; border-top: 1px solid var(--line); }
+.mobil-panel { position: fixed; left: 0; right: 0; top: var(--kopf-h, 93px); bottom: 0; overscroll-behavior: contain; background: var(--esp); padding: 24px var(--gut) 40px; display: flex; flex-direction: column; gap: 4px; overflow-y: auto; border-top: 1px solid var(--line); }
 .mobil-panel a { font-family: var(--serif); font-size: 34px; font-weight: 300; text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .mobil-panel .sprachen { margin-top: 20px; font-size: 16px; }
 .mobil-panel .sprachen a { font-family: var(--sans); font-size: 16px; border: 0; padding: 10px 14px; }
@@ -273,7 +276,15 @@ fieldset.feld { border: 0; margin: 0; padding: 0; }
   .marke-name { font-size: 17px; }
   .marke-sub { font-size: 11.5px; }
   .kopf-in { gap: 8px; }
-  .mobil-panel { top: 79px; }
+  .mobil-panel { top: var(--kopf-h, 79px); }
+}
+@media (max-width: 400px) {
+  /* schmale Handys: Name und Zusatz dürfen umbrechen statt unter die Knöpfe zu laufen */
+  .marke img { width: 44px; height: 44px; }
+  .marke { gap: 8px; }
+  .marke-name { white-space: normal; font-size: 16px; line-height: 1.12; }
+  .marke-sub { white-space: normal; font-size: 11px; line-height: 1.25; }
+  .kopf-rechts { gap: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

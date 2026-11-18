@@ -115,6 +115,14 @@
 (function () {
   var m = document.querySelector('.mobil-menue');
   if (!m) return;
+  var kopf = document.querySelector('.kopf');
+  var hoehe = function () { if (kopf) document.documentElement.style.setProperty('--kopf-h', Math.round(kopf.getBoundingClientRect().bottom) + 'px'); };
+  m.addEventListener('toggle', function () {
+    hoehe();
+    document.body.style.overflow = m.open ? 'hidden' : ''; // Seite dahinter nicht mitscrollen
+  });
+  window.addEventListener('resize', function () { if (m.open) hoehe(); });
+  window.matchMedia('(max-width: 1080px)').addEventListener('change', function (e) { if (!e.matches) m.removeAttribute('open'); });
   m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.removeAttribute('open'); }); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') m.removeAttribute('open'); });
 })();

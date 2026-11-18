@@ -185,8 +185,9 @@ em { font-style: italic; }
 .ueber-text .btn { align-self: flex-start; }
 
 /* Galerie */
-.galerie { padding: 24px var(--gut) 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.galerie img { height: 400px; }
+.galerie { padding: 24px var(--gut) 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.galerie img { height: 380px; }
+@media (max-width: 1100px) { .galerie { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .galerie-hinweis { padding: 20px var(--gut) 0; font-size: 16px; color: var(--muted); }
 
 /* FAQ */

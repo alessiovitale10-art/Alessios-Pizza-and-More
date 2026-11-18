@@ -9,9 +9,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA = os.path.join(ROOT, 'assets', 'media')
 BREITEN = (400, 640, 800, 1200, 1600, 2000)
 # Nur Bilder, die auf der Seite verwendet werden
-BILDER = ('pizza-hero', 'teig', 'belegen', 'forza-napoli', 'team-station', 'kaffee-bar', 'sektempfang-bar',
-          'pizzastueck', 'zelt', 'abendstation', 'pizza-geschnitten', 'alessio',
-          'alessio-naro', 'station-hof', 'pizza-schaufel', 'station-innenhof', 'gasofen', 'station-autohaus', 'forza-napoli-tisch', 'station-markt', 'station-detail', 'station-kerzen')
+BILDER = ('pizza-hero', 'teig', 'belegen', 'forza-napoli', 'team-station',
+          'pizzastueck', 'zelt', 'abendstation', 'pizza-anschnitt', 'alessio',
+          'alessio-naro', 'station-hof', 'pizza-schaufel', 'station-innenhof', 'gasofen', 'forza-napoli-tisch', 'station-markt', 'station-kerzen')
 
 def breiten(w):
     """Stufen unterhalb der Originalbreite, plus das Original selbst."""

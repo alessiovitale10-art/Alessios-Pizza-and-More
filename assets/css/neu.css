@@ -185,8 +185,8 @@ em { font-style: italic; }
 .ueber-text .btn { align-self: flex-start; }
 
 /* Galerie */
-.galerie { padding: 24px var(--gut) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-.galerie img { height: 420px; }
+.galerie { padding: 24px var(--gut) 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.galerie img { height: 400px; }
 .galerie-hinweis { padding: 20px var(--gut) 0; font-size: 16px; color: var(--muted); }
 
 /* FAQ */
